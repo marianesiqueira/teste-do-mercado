@@ -1,0 +1,92 @@
+/*        Programando em JAVASCRIPT
+*/
+
+<html>
+<head>
+        <title>Cadastro de Mercadoria em JAVASCRIPT</title>
+		<meta charset="UTF-8"/>	 
+</head>
+<body>
+        <form method="POST" action="CadastroDeMercadoria.html" name="formulario">
+                
+                <table>
+			<tr>
+                                <td>Codigo da Mercadoria: </td>
+                                <td><input type="text" name="codigom" id="codigoMercadoria" size='50' placeholder= "digite o codiogo da mercadoria"></td>
+                        </tr>
+
+			<tr>
+                                <td>Tipo da Mercadoria: </td>
+                                <td><input type=" text" name="tipom" id="tipoMercadoria" size='50' placeholder = "digite o tipo de mercadoria"></td>
+                        </tr>
+
+			<tr>
+                                <td>Nome da Mercadoria: </td>
+                                <td><input type="text" name="nomem" id="nomeMercadoria" size='50' placeholder="Digite o nome da mercadoria" ></td>
+                        </tr>
+
+                        <tr>
+                                <td>Quatidade: </td>
+                                <td><input type="number" name="quantidadem" id="quantidade" placeholder= "Digite a quantidade de mercadoria." size='50' ></td>
+                       
+			</tr>	
+                        
+			<tr>
+                                <td>Preco: </td>
+                                <td><input type="text" name="precom" id="preco" size='50' placeholder= "digite o preço da mercadoria " ></td>
+                        </tr>
+                        
+			<tr>
+                                <td>Tipo de Negociacao:</td>
+                                <td>
+                                        <select name="tipodenegociacao" id="tipoNegociacao">
+                                                <option value="compra">compra</option>
+                                                <option value="venda">venda</option>
+                                        </select>
+                                </td>
+                        </tr>
+                      
+			<tr>
+                                <td><input type="submit" value="Enviar Dados"  onclick="return enviarDados()"></td>
+
+                        </tr>
+                </table>
+			</form>
+
+<script language="javascript" type="text/javascript">
+
+                function enviarDados(){
+					var codigo = formulario.codigom.value;
+					var tipoDeMercadoria = formulario.tipom.value;
+					var nomeMercadoria = formulario.nomem.value;
+					var quantidade = formulario.quantidadem.value;
+					var preco = formulario.precom.value;
+					var tipoNegociacao = formulario.tipodenegociacao.value;
+													
+					
+                        if(codigo <= 0 ){
+                                        alert("codigo da mercadoria invalido");
+					return false;
+					}
+                                else
+                                        if(quantidade <= 0){
+                                                alert("quantidade invalida");
+						return false;
+						}
+                                        else
+                                                if(preco <= 0){
+                                                        alert("Preco da mercadoria invalida");
+							return false;
+							}
+                                                else
+                                                        if(tipoNegociacao != 'compra' && tipoNegociacao != 'venda'){
+                                                                alert("tipo de negociacao invalida");
+                                                                return false;
+								}
+                                                        else
+                                                                alert("Cadastro realizado com sucesso!");
+                                                                return true;
+                                        }
+        </script>
+        </body>
+</html>
